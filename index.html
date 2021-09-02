@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <title>PUBG</title>
+  </head>
+  <body>
+    <section>
+      <audio
+        src="./assets/sound/ES.Gun Machine Gun 443.mp3"
+        id="audio"
+        autostart="false"
+      ></audio>
+    </section>
+
+    <script>
+      document.addEventListener("click", function (e) {
+        let body = document.querySelector("body");
+        let bullet = document.createElement("span");
+
+        bullet.classList.add("bullet");
+
+        let x = e.offsetX;
+        let y = e.offsetY;
+
+        bullet.style.left = x + "px";
+        bullet.style.top = y + "px";
+        body.appendChild(bullet);
+
+        // Add sound
+        let sound = document.getElementById("audio");
+        sound.play();
+
+        // Random img
+        let images = [
+          "url(https://lh3.googleusercontent.com/gihy-phm3QNkuQX_IRk8KV4Yq_HnnQmHc0LWAfHuKpmu0AttxnvOFhDf9Ac_2oF7MNVlAEdmZbL1Wfb7LKhGI2mJRzzEezMWPZ7AtJPCODVR3MTsVpR0O3t-kb0uZwzyrpmGTZj5LKhkS0AugYWbXHe8bA1VRAbOw9NYb1zDavxg6DFdzRZ3V5-yPIOPyT866c2kizXUn4KdTcqPzo3dK0vofviN8qECMvG8GoYW4qH60-FWVn9vfKNJBwtlcTHjFgj4qDWFec68tvSpc4MUD1amXZO8BzoW6yKJr_ckk2ARQVeKUw5WSH0bDI3rGSlqnkpB7zZKOzBIizZpsFQTBwEfolB703QZwAD1VZAua0CnDlHolvti89z-7fmP9qOqiwS_SRikcSGSgZClcIoagyG8URS5D6kLVVAHConPJIAgWtxrmgUgrck_E7D2g-u7xsMd37KXPPlkjaKMK9xfuWFCD6m6S0Ix5jzsU59kvB_gYinwW6nPsmB3a1SFAPIJxQ7LGsTiSbXOWXEZIXDNkFDL8N8atJmU_wQX0mEi_tGzyYhTeU_x23opv9-ahGsgHFpTi_3JbWmegp-X42oJ1DG6VmCok2TC9KeYYloZNv-6qDCHoLyZgWxDHw6mQFxPKojZUYPXi-j59LPwGYfwWzDbfWafXvoca2pB1ycSOeGuGlTaaCRpPyrr8uTb_WsAHn1f4efokviiuuMlIw_QhZGX=w210-h211-no?authuser=7)",
+          "url(https://lh3.googleusercontent.com/XUG8TIRKJ1QEQmue6_CFFdg8r6BPoaxIweliA8gQB5IqpDp_YhmNIEKpIqaGDsCvuAFGplXfGbNai_TAZwfXgDcdeFp0AHtLpYsXrlA2piUzJNta_1FFfTKq5xNH-hXgKJotIETVLe9toF-W5iZO5xQUQRuJz533oHCdvAJkcniEHTKBb8_rVMhL3sK6LmdPHJbU1KhYf_G4j6gaooq0N5wwVqyTaEzgWQ-2Z5BcCA1UNlKtPWsvltICEtZQPI4qzNZIC8V0deL0Kx_0zEHYW57f1Dl8FWO7SLcVR4vpx_aoQWf6eHYfOIrYqDGlWgmo0A8jBDUmMFIGRg59SysiBbKtCdRfF8KlX7jJaGD1ydLeis1h0nptSzA-uBPFnDmMfXKLUXkyrdUumFeY2rB_39rBURDff6TApkZVsDVasdM3eupoDhF14WVChq-QR9sw9qjB_SAfLNP_mmg0OjGbSe35M54dPlsDPqjqYVqa5LOXuvZJcZ8u1F-_zlESXb-hg-bhwzGRfjJ7dM_d1SpbCl3UYHdGsIamkNSg8N7yYq2TiuB2sbGngjoMqN653uux45-uTyNqldPpJpCp2a5M2HOCBaRTKSHWNSzd0SsKp1-eRriMlyI5GliaICU6HdXAe5ieiEuf7NICcdKPcz3J0g-mKfYRJF557ydHkRsQHB1NJJ4Fom_GenkPp8OtmLkzQ_cIN4XCvKTCJcqw9m4nBIkD=w868-h819-no?authuser=7)",
+          "url(https://lh3.googleusercontent.com/4SxIAniUTZKQf43HzK8VWZNgKtfNgGAZTPcAtEpM78geAx5Z-2PRbHeBi_gWflxhlLPefqcAQUM-rViBJjYoDnl3Y6ksyv_S6u0ktNsG-GcBxdMgcx1T9A9l7iQCS6XO3WxWcG5KlgPIJSDneoDcf1KH6RCnP8jWL46G_ZIp5haojitTg4d5imlPqDdTp-4B4JiovOvCHFSOaqJ70UrmwZJtXHxFWZMe4dz7zXW9JvmRSg8xf8g5XFwVH-AJ87WgJYI4mv6Kq1FjxEpOaT0gek5APhR5W_KvT_V6qRZG9lJ3fFeVkRi8xhxLdcFHfxdD6HbxxvSMeRbhJZfwb_yeKi6PytAKyPjJglhEqVv-_vN2H9Rv72mZo1SgfOOasCwUHANMhIlAeyiPHKuAyJDulWbtyezcZJs8rIlbwRcNjhVUB50HBLqoe7W8GwSP-xdpEDflmK8uT9f1pvdLEGZo5NzTaNVov-CqmCRdz2KM7PDHD3efq6-ubsydEbN5D3dgeoDeSWa3ijwag9twE1bwwaexhNwxZp2hmHWpuCCm7R9SUiaBkyXJRFbAG_WowQ_h1De9lgKNPOL5Ld7hA-oF5Qa57Mz-8KbZbOJR9P_9fJIMylyw778jce69bogWBwM01m8eKrObh2LgZX0vpys1nfNDDNn9yLfJYUNl0-PHq9fCz3ilNjJYMOgkHWa_e7eZcx08VChnJx6SO8u5g-4DJHVI=w600-h427-no?authuser=7)",
+          "url(https://lh3.googleusercontent.com/Yj8CxZgkdRHD3IWT9hpTfrmYhTpPNwVk2GiSTFHBXu2q6o6VBO3lbTUXdpuy4NxkaaVEignUERpBtU-OMJ51p-VxugNpCAvHmlB6L3WKJUyTezeD07f7_isLbZzuijplWGqDJdH-q3RSuVDlpJTZnywNFPyEbN1EtIDEOQlZHUezNziFcJhYdgYPilIwZ5p7ZdX2Qa7tjr6GywR2EBLcJBpE6zEe6bCjnhdjrtQJaXnnKEHb3LeeXZoWavAaHEumbCFBMW9xEzSZTbu1vkr0OIyIhK6owRevlFjW2Rl6VJnDv09BUzbq34P9Zougt-QeN3gQeUesl-YJtQMMZzyVEMWmCRzCq5fiF_qcprN3RrFl7KeTa9ce9PzqKMTl8U3ll2cneKy-5QMRtpRfIc7vRYTbeKYrZZcATTGlzB_LTlzFA8hEay8da2BHESYXVcVEWbLY30nyKpP2TjuiBA8Wplk3n2Ifvx3l-rtqqdTVr_mGSDI2lCao53akZp_fBgfzLIoDH-MJq9I4Ej0UKfkb2_HJML8MO4fgqIUknfYunDcuWACRDGAysYTdaDjebxbjhkiGojFkrxV2PwJ-miLI7pVGI2Jvf1-PGofPiOD-GN7PZepMowbkI6gZMeRhVnJssUibzBDTdRPbOBoYl67Yed9akIZ7LTpzHOcPsAOg-Ppi1ayaLjQZapjtqBwqeH6LB6Tgs6YpUFDFqGJl5pFEWmmD=w879-h819-no?authuser=7)",
+        ];
+
+        // Blood
+        let blood = document.createElement("span");
+        blood.classList.add("blood");
+
+        let bg = images[Math.floor(Math.random() * images.length)];
+        blood.style.backgroundImage = bg;
+
+        blood.style.left = Math.random() * innerWidth + "px";
+        blood.style.right = Math.random() * innerHeight + "px";
+
+        body.appendChild(blood);
+
+        //   REMOVE
+        setTimeout(function () {
+          bullet.remove();
+          blood.remove();
+        }, 4000);
+      });
+    </script>
+  </body>
+</html>
